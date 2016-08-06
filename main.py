@@ -56,17 +56,22 @@ def get_url(url):
 def do_rules(recipient_id, message_text):
     rules = {
         "hi": "Hey! Give me a date (dd.mm.yyyy) ;)",
+    }
+
+    dates = {
         "01.01.1990": "https://www.youtube.com/watch?v=Qt2mbGP6vFI",
         "21.05.1983": "https://www.youtube.com/watch?v=N4d7Wp9kKjA",
         "05.08.1989": "https://www.youtube.com/watch?v=pfLFP7WncLI",
-        "servus": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)"
-        }
-
+    }
     greetings = ["Enjoy!", "Have fun ;)", "Let's dance!", "Freak out on:", "Fancy!", "Live it up"]
 
     if message_text in rules:
+        reply = message_text
+        
+    if message_text in dates:
         reply = random.choice(greetings) + " " + rules[message_text]
-        reply_with_text(recipient_id, reply)
+
+     reply_with_text(recipient_id, reply)
 
     else:
         reply_with_text(recipient_id, "Sorry, I don't unterstand. Give me a date (dd.mm.yyyy)")
