@@ -2,6 +2,7 @@
 import json, urllib
 from flask import Flask, request, abort
 import requests
+import random
 
 app = Flask(__name__)
 
@@ -55,14 +56,17 @@ def get_url(url):
 def do_rules(recipient_id, message_text):
     rules = {
         "hi": "Hey! Give me a date (dd.mm.yyyy) ;)",
-        "01.01.1990": "Enjoy! https://www.youtube.com/watch?v=Qt2mbGP6vFI",
-        "hallo": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
-        "guten tag": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
+        "01.01.1990": "https://www.youtube.com/watch?v=Qt2mbGP6vFI",
+        "21.05.1983": "https://www.youtube.com/watch?v=N4d7Wp9kKjA",
+        "05.08.1989": " ",
         "servus": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)"
         }
 
+    greetings = ["Enjoy!", "Have fun ;)", "Let's dance!"]
+
     if message_text in rules:
-        reply_with_text(recipient_id, rules[message_text])
+        reply = random.choice(greetings) + " " + rules[message_test]
+        reply_with_text(recipient_id, reply)
 
     else:
         reply_with_text(recipient_id, "Sorry, ich verstehe nicht was du meinst. Sag mir noch einmal das Datum ;) (tt.mm.jjjj)")
