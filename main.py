@@ -62,7 +62,7 @@ def do_rules(recipient_id, message_text):
         "servus": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)"
         }
 
-    greetings = ["Enjoy!", "Have fun ;)", "Let's dance!"]
+    greetings = ["Enjoy!", "Have fun ;)", "Let's dance!", "Freak out on:", "Fancy!", "Live it up"]
 
     if message_text in rules:
         reply = random.choice(greetings) + " " + rules[message_text]
