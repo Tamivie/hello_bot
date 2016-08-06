@@ -37,11 +37,12 @@ def post_webhook():
 
                     if 'text' in messaging_event['message']:
                         message_text = messaging_event['message']['text']
+                        '''
                         image = "http://cdn.shopify.com/s/files/1/0080/8372/products/tattly_jen_mussari_hello_script_web_design_01_grande.jpg"
                         element = create_generic_template_element("Hello", image, message_text)
                         reply_with_generic_template(sender_id, [element])
-
-                        # do_rules(sender_id, message_text)
+                        '''
+                        do_rules(sender_id, message_text)
 
     return "ok", 200
 
@@ -53,15 +54,16 @@ def get_url(url):
 
 def do_rules(recipient_id, message_text):
     rules = {
-        "Hello": "World",
-        "Foo": "Bar"
-    }
+        "Hello": "Hallo! Sag mir von welchem Tag Du den No. 1 Hit sehen möchtest. Gib das Datum (tt.mm.jjjj) ein.",
+        "Hi": "Hallo! Sag mir von welchem Tag Du den No. 1 Hit sehen möchtest. Gib das Datum (tt.mm.jjjj) ein.",
+        "Hallo": "Hallo! Sag mir von welchem Tag Du den No. 1 Hit sehen möchtest. Gib das Datum (tt.mm.jjjj) ein."
+        }
 
     if message_text in rules:
         reply_with_text(recipient_id, rules[message_text])
 
     else:
-        reply_with_text(recipient_id, "You have to write something I understand ;)")
+        reply_with_text(recipient_id, "Sorry, ich verstehe nicht was du meinst. Sag mir noch einmal das Datum ;) (tt.mm.jjjj)")
 
 
 def reply_with_text(recipient_id, message_text):
@@ -99,6 +101,8 @@ def reply_to_facebook(recipient_id, message):
         },
         "message": message
     })
+
+    print data
 
     url = "https://graph.facebook.com/v2.6/me/messages?" + urllib.urlencode(params)
     r = requests.post(url=url, headers=headers, data=data)
