@@ -54,8 +54,8 @@ def get_url(url):
 
 def do_rules(recipient_id, message_text):
     rules = {
-        "hello": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
-        "hi": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
+        "hi": "Hey! Give me a date (dd.mm.yyyy) ;)",
+        "01.01.1990": "Enjoy! https://www.youtube.com/watch?v=Qt2mbGP6vFI",
         "hallo": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
         "guten tag": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
         "servus": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)"
@@ -67,6 +67,17 @@ def do_rules(recipient_id, message_text):
     else:
         reply_with_text(recipient_id, "Sorry, ich verstehe nicht was du meinst. Sag mir noch einmal das Datum ;) (tt.mm.jjjj)")
 
+'''
+def show_video(url):
+    import urllib.request
+    import urllib.parse
+    import re
+
+    query_string = urllib.parse.urlencode({"search_query" : input()})
+    html_content = urllib.request.urlopen("http://www.youtube.com/results?" + query_string)
+    search_results = re.findall(r'href=\"\/watch\?v=(.{11})', html_content.read().decode())
+    print("http://www.youtube.com/watch?v=" + search_results[0])
+'''
 
 def reply_with_text(recipient_id, message_text):
     message = {
