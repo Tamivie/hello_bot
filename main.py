@@ -56,9 +56,9 @@ def do_rules(recipient_id, message_text):
     rules = {
         "hello": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
         "hi": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
-        "hallo": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)"
+        "hallo": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
         "guten tag": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
-        "servus": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)",
+        "servus": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)"
         }
 
     if message_text in rules:
