@@ -36,7 +36,7 @@ def post_webhook():
                     sender_id = messaging_event['sender']['id']
 
                     if 'text' in messaging_event['message']:
-                        message_text = messaging_event['message']['text']
+                        message_text = messaging_event['message']['text'].lower()
                         '''
                         image = "http://cdn.shopify.com/s/files/1/0080/8372/products/tattly_jen_mussari_hello_script_web_design_01_grande.jpg"
                         element = create_generic_template_element("Hello", image, message_text)
@@ -54,9 +54,9 @@ def get_url(url):
 
 def do_rules(recipient_id, message_text):
     rules = {
-        "Hello": "Hallo! Sag mir von welchem Tag Du den No. 1 Hit sehen möchtest. Gib das Datum (tt.mm.jjjj) ein.",
-        "Hi": "Hallo! Sag mir von welchem Tag Du den No. 1 Hit sehen möchtest. Gib das Datum (tt.mm.jjjj) ein.",
-        "Hallo": "Hallo! Sag mir von welchem Tag Du den No. 1 Hit sehen möchtest. Gib das Datum (tt.mm.jjjj) ein."
+        "hello": "Hallo! Sag mir von welchem Tag Du den No. 1 Hit sehen möchtest. Gib das Datum (tt.mm.jjjj) ein.",
+        "hi": "Hallo! Sag mir von welchem Tag Du den No. 1 Hit sehen möchtest. Gib das Datum (tt.mm.jjjj) ein.",
+        "hallo": "Hallo! Sag mir von welchem Tag Du den No. 1 Hit sehen möchtest. Gib das Datum (tt.mm.jjjj) ein."
         }
 
     if message_text in rules:
