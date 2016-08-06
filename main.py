@@ -66,14 +66,13 @@ def do_rules(recipient_id, message_text):
     greetings = ["Enjoy!", "Have fun ;)", "Let's dance!", "Freak out on:", "Fancy!", "Live it up"]
 
     if message_text in rules:
-        reply = [message_text]
-
-    if message_text in dates:
-        reply = random.choice(greetings) + " " + rules[message_text]
-        reply_with_text(recipient_id, reply)
-
+        reply = rules[message_text]
+    elif message_text in dates:
+        reply = random.choice(greetings) + " " + dates[message_text]
     else:
-        reply_with_text(recipient_id, "Sorry, I don't unterstand. Give me a date (dd.mm.yyyy)")
+        reply = "Sorry, I don't unterstand. Give me a date (dd.mm.yyyy)"
+
+    reply_with_text(recipient_id, reply)
 
 '''
 def show_video(url):
