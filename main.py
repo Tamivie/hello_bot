@@ -58,7 +58,7 @@ def do_rules(recipient_id, message_text):
         "hi": "Hey! Give me a date (dd.mm.yyyy) ;)",
         "01.01.1990": "https://www.youtube.com/watch?v=Qt2mbGP6vFI",
         "21.05.1983": "https://www.youtube.com/watch?v=N4d7Wp9kKjA",
-        "05.08.1989": " ",
+        "05.08.1989": "https://www.youtube.com/watch?v=pfLFP7WncLI",
         "servus": "Hallo! Du suchst nach dem No. 1 Hit eines bestimmtn Tages? Kein Problem, sag mir einfach von welchem (tt.mm.jjjj) ;)"
         }
 
