@@ -70,8 +70,7 @@ def do_rules(recipient_id, message_text):
         
     if message_text in dates:
         reply = random.choice(greetings) + " " + rules[message_text]
-
-     reply_with_text(recipient_id, reply)
+        reply_with_text(recipient_id, reply)
 
     else:
         reply_with_text(recipient_id, "Sorry, I don't unterstand. Give me a date (dd.mm.yyyy)")
