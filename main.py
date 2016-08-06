@@ -69,7 +69,7 @@ def do_rules(recipient_id, message_text):
         reply_with_text(recipient_id, reply)
 
     else:
-        reply_with_text(recipient_id, "Sorry, ich verstehe nicht was du meinst. Sag mir noch einmal das Datum ;) (tt.mm.jjjj)")
+        reply_with_text(recipient_id, "Sorry, I don't unterstand. Give me a date (dd.mm.yyyy)")
 
 '''
 def show_video(url):
