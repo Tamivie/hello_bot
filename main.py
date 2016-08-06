@@ -66,8 +66,8 @@ def do_rules(recipient_id, message_text):
     greetings = ["Enjoy!", "Have fun ;)", "Let's dance!", "Freak out on:", "Fancy!", "Live it up"]
 
     if message_text in rules:
-        reply = message_text
-        
+        reply = [message_text]
+
     if message_text in dates:
         reply = random.choice(greetings) + " " + rules[message_text]
         reply_with_text(recipient_id, reply)
